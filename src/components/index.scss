@@ -1,0 +1,32 @@
+.header {
+  background-color: #6278f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 65px;
+
+  .content-left .logo {
+    height: 45px;
+  }
+
+  .content-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .content-left span {
+    color: white;
+    font-weight: 600;
+  }
+
+  .content-right nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .content-right nav a {
+    color: white;
+    text-decoration: none;
+  }
+}
