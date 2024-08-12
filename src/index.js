@@ -5,6 +5,8 @@ import App from "./pages/app";
 import { AboutPage } from "./pages/sobre";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ExercicioOne } from "./pages/exercicio-1";
+import { ExerciceTwo } from "./pages/exercicio-2";
+import { ExerciceTen } from "./pages/exercicio-10";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
   {
     path: "/exercicio-1",
     element: <ExercicioOne />,
+  },
+  {
+    path: "/exercicio-2",
+    element: <ExerciceTwo />,
+  },
+  {
+    path: "/exercicio-10",
+    element: <ExerciceTen />,
   },
 ]);
 

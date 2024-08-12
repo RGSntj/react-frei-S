@@ -21,21 +21,21 @@ export default function App() {
             <p>Exercício 1</p>
           </Link>
 
-          {/* <div className="card">
-            <div className="box"></div>
+          <Link className="card" to="/exercicio-2">
+            <div className="box2"></div>
 
             <h2>Converter Kg/gramas</h2>
 
             <p>Exercício 2</p>
-          </div>
+          </Link>
 
           <div className="card">
-            <div className="box"></div>
+            <div className="box3"></div>
 
             <h2>Valor total por quantidade</h2>
 
             <p>Exercício 3</p>
-          </div> */}
+          </div>
         </div>
       </section>
     </>

@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 import { Header } from "../../components/Header";
 import "./styles.scss";
+import { useState } from "react";
 
 export function ExercicioOne() {
+  const [valorPedido, setValorPedido] = useState(0);
+  const [valorCupom, setValorCupom] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  function calcularTotal() {
+    const totalPedido = valorPedido - valorCupom;
+    setTotal(totalPedido);
+  }
+
   return (
     <>
       <Header />
@@ -30,16 +40,34 @@ export function ExercicioOne() {
           </p>
         </div>
 
-        <div className="box-cupom">
-          <div className="input-group">
-            <label htmlFor="valor-pedido">Informe o valor do pedido</label>
-            <input placeholder="0" id="valor-pedido" type="text" />
+        <div className="main-content">
+          <div className="box-cupom">
+            <div className="input-group">
+              <label htmlFor="valor-pedido">Informe o valor do pedido</label>
+              <input
+                placeholder="0"
+                id="valor-pedido"
+                onChange={(e) => setValorPedido(e.target.value)}
+                value={valorPedido}
+                type="text"
+              />
+            </div>
+
+            <div className="input-group">
+              <label htmlFor="valor-pedido">Informe o valor do cupom</label>
+              <input
+                placeholder="0"
+                onChange={(e) => setValorCupom(e.target.value)}
+                value={valorCupom}
+                id="valor-pedido"
+                type="text"
+              />
+            </div>
+
+            <button onClick={calcularTotal}>Executar</button>
           </div>
 
-          <div className="input-group">
-            <label htmlFor="valor-pedido">Informe o valor do pedido</label>
-            <input placeholder="0" id="valor-pedido" type="text" />
-          </div>
+          <p>Resultado: O total é R$ {total.toFixed(2)}</p>
         </div>
       </section>
     </>
