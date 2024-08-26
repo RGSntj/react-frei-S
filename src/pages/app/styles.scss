@@ -12,7 +12,6 @@
   }
 
   .card {
-    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,6 +21,8 @@
     min-width: 215px;
     cursor: pointer;
     transition: all 0.43s;
+    gap: 10px;
+    margin-top: 20px;
 
     &:hover {
       transform: translate(-1px, -1px);
@@ -37,13 +38,13 @@
       font-size: 13px;
     }
 
-    .box {
-      height: 55px;
-      width: 55px;
-      border-radius: 10px;
+    // .box {
+    //   height: 55px;
+    //   width: 55px;
+    //   border-radius: 10px;
 
-      background-color: #ffce37;
-    }
+    //   background-color: #ffce37;
+    // }
 
     .box2 {
       height: 55px;
@@ -58,7 +59,15 @@
       width: 55px;
       border-radius: 10px;
 
-      background-color: #b3ff37;
+      background-color: #b75333;
+    }
+
+    .box4 {
+      height: 55px;
+      width: 55px;
+      border-radius: 10px;
+
+      background-color: #6533b7;
     }
   }
 }

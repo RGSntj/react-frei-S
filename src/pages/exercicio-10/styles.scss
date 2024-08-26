@@ -1,26 +1,45 @@
-.box-cupom {
-  .input-group {
-    input {
-      margin-top: 15px;
+.line3 {
+  height: 4px;
+  background-color: #b75333;
+  margin: 10px 0;
+}
+
+.main-container {
+  flex: 1;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 400px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+
+    .content {
+      display: flex;
+      gap: 10px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      label {
+        font-weight: bold;
+      }
+
+      input {
+        border-radius: 8px;
+        outline: none;
+        border: 1px solid #a5a5a5;
+        padding: 5px 10px;
+      }
+    }
+
+    button {
+      align-self: flex-end;
     }
   }
-}
-
-.container {
-  .line-2 {
-    height: 4px;
-    background-color: #b3ff37;
-  }
-}
-
-button {
-  margin-top: 20px;
-  display: flex;
-  padding: 10px 50px;
-  cursor: pointer;
-  background-color: #6278f7;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
 }

@@ -1,24 +1,16 @@
 import { Link } from "react-router-dom";
 import { Header } from "../../components/Header";
-
 import "./styles.scss";
+
+import { withMask } from "use-mask-input";
 import { useState } from "react";
 
 export function ExerciceTen() {
-  const [numero, setNumero] = useState(0);
-  const [tabuada, setTabuada] = useState([]);
+  const [altura, setAltura] = useState(0);
+  const [peso, setPeso] = useState(0);
+  const [resultado, setResultado] = useState([]);
 
-  function calcularTabuada() {
-    let resultado = [];
-
-    for (let i = 1; i <= 10; i++) {
-      const calculoMontado = `${numero} x ${i} = ${numero * i}`;
-
-      resultado.push(calculoMontado);
-    }
-
-    setTabuada(resultado);
-  }
+  function calcularImc() {}
 
   return (
     <>
@@ -33,35 +25,50 @@ export function ExerciceTen() {
               alt=""
             />
           </Link>
-          <h1>Exercício 02 - Converter Kg/gramas</h1>
+          <h1>Exercício 10 - Calculo de IMC com histórico</h1>
         </div>
-        <div className="line-2" />
+        <div className="line3" />
 
         <div className="box-container">
           <p>
-            Implemente um programa em Javascript que escreva a tabuada de um
-            número informado pelo usuário. A mensagem deve estar no formato ”A x
-            B = X”.
+            Implemente um programa em Javascript que a partir da altura e do
+            peso de uma pessoa, calcule o IMC e avalie a faixa correspondente a
+            tabela ao lado. Ao final, apresente o IMC e a situação
           </p>
         </div>
 
-        <div className="main-content">
-          <div className="box-cupom">
-            <div className="input-group">
-              <label htmlFor="valor-numero">Tabuado do:</label>
-              <input
-                placeholder="0"
-                id="valor-numero"
-                onChange={(e) => setNumero(e.target.value)}
-                type="number"
-              />
-            </div>
-            <button onClick={calcularTabuada}>Executar</button>
+        <div className="main-container">
+          <form>
+            <div className="content">
+              <div className="input-group">
+                <label htmlFor="altura">Altura</label>
+                <input
+                  type="text"
+                  id="altura"
+                  placeholder="1.73"
+                  ref={withMask("9.99")}
+                  onChange={(e) => setAltura(e.target.value)}
+                />
+              </div>
 
-            {tabuada.map((value) => {
-              return <h3>{value}</h3>;
-            })}
-          </div>
+              <div className="input-group">
+                <label htmlFor="peso">Peso</label>
+                <input
+                  type="text"
+                  id="peso"
+                  placeholder="55"
+                  ref={withMask("99")}
+                  onChange={(e) => setPeso(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <button type="button" onClick={calcularImc}>
+              Executar
+            </button>
+          </form>
+
+          <div className="results"></div>
         </div>
       </section>
     </>
