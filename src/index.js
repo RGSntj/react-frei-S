@@ -8,6 +8,7 @@ import { ExercicioOne } from "./pages/exercicio-1";
 import { ExerciceTwo } from "./pages/exercicio-2";
 import { ExerciceEleven } from "./pages/exercicio-11";
 import { ExerciceTen } from "./pages/exercicio-10";
+import { ExerciceFour } from "./pages/exercicio-4";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/exercicio-2",
     element: <ExerciceTwo />,
+  },
+  {
+    path: "/exercicio-4",
+    element: <ExerciceFour />,
   },
   {
     path: "/exercicio-10",

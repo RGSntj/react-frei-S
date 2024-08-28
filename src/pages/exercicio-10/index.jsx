@@ -8,9 +8,33 @@ import { useState } from "react";
 export function ExerciceTen() {
   const [altura, setAltura] = useState(0);
   const [peso, setPeso] = useState(0);
-  const [resultado, setResultado] = useState([]);
+  const [resultadoImc, setResultadoImc] = useState({
+    peso: 0,
+    altura: 0,
+    resultado: "",
+  });
 
-  function calcularImc() {}
+  function calcularImc() {
+    let calculo = Number(peso) / (Number(altura) * Number(altura));
+
+    let resultado = "";
+
+    if (calc < 16.9) {
+      resultado = "Muito abaixo do peso";
+    } else if (calculo >= 17 && calculo < 18.4) {
+      resultado = "Abaixo do peso";
+    } else if (calculo >= 18.5 && calculo < 24.9) {
+      resultado = "Peso normal";
+    } else if (calculo >= 25 && calculo < 29.9) {
+      resultado = "Acima do peso";
+    } else if (calculo >= 30 && calculo < 34.9) {
+      resultado = "Obesidade Grau I";
+    } else if (calculo >= 35 && calculo <= 40) {
+      resultado = "Obesidade Grau II";
+    } else if (calculo > 40) {
+      resultado = "Obesidade Grau III";
+    }
+  }
 
   return (
     <>
@@ -68,7 +92,17 @@ export function ExerciceTen() {
             </button>
           </form>
 
-          <div className="results"></div>
+          <div className="results">
+            <div className="resultado-item">
+              <p>Altura: 1.80 | Peso: 80.5 | Situação: Peso Normal</p>
+              <span>✖</span>
+            </div>
+
+            <div className="resultado-item">
+              <p>Altura: 1.80 | Peso: 80.5 | Situação: Peso Normal</p>
+              <span>✖</span>
+            </div>
+          </div>
         </div>
       </section>
     </>

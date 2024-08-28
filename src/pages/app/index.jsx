@@ -20,6 +20,12 @@ export default function App() {
       subtitulo: "Exercicio 2",
     },
     {
+      link: "/exercicio-4",
+      cor: "azul",
+      titulo: "Leitura de livro",
+      subtitulo: "Exercicio 4",
+    },
+    {
       link: "/exercicio-10",
       cor: "marrom",
       titulo: "Calculo de IMC com histórico",
