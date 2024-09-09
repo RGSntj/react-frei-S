@@ -8,18 +8,14 @@ import { useState } from "react";
 export function ExerciceTen() {
   const [altura, setAltura] = useState(0);
   const [peso, setPeso] = useState(0);
-  const [resultadoImc, setResultadoImc] = useState({
-    peso: 0,
-    altura: 0,
-    resultado: "",
-  });
+  const [resultadoImc, setResultadoImc] = useState([]);
 
   function calcularImc() {
     let calculo = Number(peso) / (Number(altura) * Number(altura));
 
     let resultado = "";
 
-    if (calc < 16.9) {
+    if (calculo < 16.9) {
       resultado = "Muito abaixo do peso";
     } else if (calculo >= 17 && calculo < 18.4) {
       resultado = "Abaixo do peso";
@@ -34,6 +30,8 @@ export function ExerciceTen() {
     } else if (calculo > 40) {
       resultado = "Obesidade Grau III";
     }
+
+    let resposta = `Altura: ${altura} | Peso: ${peso} | Situação: ${resultado}`;
   }
 
   return (

@@ -3,8 +3,6 @@ import { Header } from "../../components/Header";
 import "./styles.scss";
 import { Card } from "../../components/Card";
 
-// import Logo from "../../../";
-
 export default function App() {
   const cards = [
     {
